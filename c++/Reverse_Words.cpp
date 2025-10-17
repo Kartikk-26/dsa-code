@@ -1,24 +1,18 @@
-// 151. Reverse Words in a String
-// Given an input string s, reverse the order of the words. A word is defined as a sequence of non-space characters. The words in s will be separated by at least one space.
-// Return a string of the words in reverse order, concatenated by a single space. Note that s may contain leading or trailing spaces or multiple spaces between two words. The returned string should only have a single space separating the words. Do not include any extra spaces.
 
-// Example 1:
-// Input: s = "the sky is blue"
-// Output: "blue is sky the"
+// Move Zeroes (LeetCode 283)
+// Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+// You must do this in-place without making a copy of the array.
 
-// Example 2:
-// Input: s = "  hello world  "
-// Output: "world hello"
-// Explanation: Your reversed string should not contain leading or trailing spaces.
+// Example:
+// Input: nums = [0,1,0,3,12]
+// Output: [1,3,12,0,0]
 
-//Example 3:
-// Input: s = "a good   example"
-// Output: "example good a"
-// Explanation: You need to reduce multiple spaces between two words to a single space in the reversed string.
+// Input: nums = [0]
+// Output: [0]
 
-
-// Time Complexity: O(n)  where n = s.length()
-// Space Complexity: O(n)  for storing words
+// Time Complexity: O(n) where n = nums.size()
+// Space Complexity: O(1) (in-place)
+>>>>>>> rj
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -27,6 +21,7 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
+<<<<<<< HEAD
     string s;
     getline(cin, s);
 
@@ -47,5 +42,23 @@ int main() {
     }
 
     cout << out << '\n';
+=======
+    vector<int> nums;
+    int x;
+    while (cin >> x) nums.push_back(x);
+
+    int lastNonZero = 0;
+    for (int i = 0; i < nums.size(); ++i) {
+        if (nums[i] != 0) {
+            swap(nums[i], nums[lastNonZero]);
+            lastNonZero++;
+        }
+    }
+
+    for (int i = 0; i < nums.size(); ++i) {
+        cout << nums[i] << " ";
+    }
+    cout << '\n';
+>>>>>>> rj
     return 0;
 }
